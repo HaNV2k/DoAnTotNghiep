@@ -1,0 +1,49 @@
+﻿@using DoAnTotNghiep.Models
+@model List<TopProduct>
+
+<div class="products grid">
+    <div class="row row-js data-1">
+        @{
+            int i = 1;
+            foreach (var item in Model)
+            {
+                <div class="col l-2-4 m-4 product__figure data-@i" onclick="addToCart(@item.Id)">
+                    <div class="product__photo">
+                        <img src=@item.thumbnail_url alt="tree" class="product__img">
+                        <span>@item.discount%</span>
+                        <div class="product__interactive">
+                            <i class="product__inter-icon data-@i transition-primary fa-solid fa-bag-shopping btn-add"></i>
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <div class="product__content-wrap">
+                            <div class="product__stars">
+                                <i class="product__star-icon far fa-star transition-primary"></i>
+                                <i class="product__star-icon far fa-star transition-primary"></i>
+                                <i class="product__star-icon far fa-star transition-primary"></i>
+                                <i class="product__star-icon far fa-star transition-primary"></i>
+                                <i class="product__star-icon far fa-star transition-primary"></i>
+                            </div>
+                            <p class="product__name">@item.name</p>
+                            <div class="product__price">
+                                <span class="product__price-1">@item.original_price&#8363;</span>
+                                <span class="product__price-2">@item.price&#8363;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                i++;
+            }
+        }
+    </div>
+</div>
+
+<script>
+    function addToCart(id) {
+        document.getElementById("Quantity_Cart").innerHTML = parseInt(document.getElementById("Quantity_Cart").innerText) + 1
+
+
+
+    }
+
+</script>

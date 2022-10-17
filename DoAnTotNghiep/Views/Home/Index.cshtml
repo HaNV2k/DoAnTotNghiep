@@ -1,0 +1,486 @@
+﻿@using DoAnTotNghiep.Models
+@model List<Product>
+@{
+    ViewBag.Title = "Ecommerce fashion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees-Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/Assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/Assets/css/base.css" rel="stylesheet" />
+    <link href="~/Assets/css/grid.css" rel="stylesheet" />
+    <link href="~/Assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <nav class="navbar">
+                <!--Header bên trái-->
+                <ul class="navbar__list">
+                    <li class="navbar__item navbar__item--subnav transition-primary item-primary">
+                        HOME
+                        <i class="navbar__arrow fa-solid fa-angle-down"></i>
+
+                        <div class="subnav box-shadow">
+                            <ul class="subnav__list">
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Home Shop 1
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Home Shop 2
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Home Shop 3
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Home Shop 4
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Home Shop 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="navbar__item navbar__item--subnav-shop">
+                        <span class="transition-primary">
+                            SHOP
+                            <i class="navbar__arrow fa-solid fa-angle-down"></i>
+                        </span>
+
+                        <div class="subnav z-1 wdt-200 box-shadow">
+                            <ul class="subnav__head">
+                                <li class="subnav__head-item">
+                                    <h3>
+                                        <a href="" class="transition-primary">
+                                            Shop Layouts
+                                        </a>
+                                    </h3>
+                                    <ul class="subnav__list-2">
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Full Width</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Full Width List</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Right Sidebar</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Right Sidebar List</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">List View</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="subnav__head-item">
+                                    <h3>
+                                        <a href="" class="transition-primary">
+                                            Other Pages
+                                        </a>
+                                    </h3>
+                                    <ul class="subnav__list-2">
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Cart</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Wishlist</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Checkout</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">My Account</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Error 404</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="subnav__head-item">
+                                    <h3>
+                                        <a href="" class="transition-primary">
+                                            Product Types
+                                        </a>
+                                    </h3>
+                                    <ul class="subnav__list-2">
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Product Details</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Product Sidebar</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Product Grouped</a>
+                                        </li>
+                                        <li class="subnav__item">
+                                            <a href="" class="subnav__item-link-2">Product Variabler</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="navbar__item navbar__item--subnav transition-primary">
+                        BLOG
+                        <i class="navbar__arrow fa-solid fa-angle-down"></i>
+
+                        <div class="subnav subnav--blog box-shadow z-2">
+                            <ul class="subnav__list">
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Blog Details
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Blog Fullwidth
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Blog Sidebar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="navbar__item navbar__item--subnav transition-primary">
+                        PAGES
+                        <i class="navbar__arrow fa-solid fa-angle-down"></i>
+
+                        <div class="subnav subnav--pages box-shadow z-3">
+                            <ul class="subnav__list">
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Services
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Frequently Questions
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Contact
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Login
+                                    </a>
+                                </li>
+                                <li class="subnav__item">
+                                    <a href="" class="subnav__item-link transition-primary">
+                                        Error 404
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="navbar__item transition-primary">CONTACT US</li>
+                </ul>
+                <!--Logo trung tâm màn hình-->
+                <div class="navbar__logo">
+                    <img src="~/Assets/img/Logo/logo.jpg" alt="" class="navbar__logo-img" />
+                </div>
+                <!--Header bên phải màn hình-->
+                <div class="navbar__access">
+                    <!-- Search Product -->
+                    <div class="navbar__input">
+                        <input type="text" class="navbar__input-search" placeholder="Search product...">
+                        <i class="navbar__icon transition-primary fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="navbar__icon-list">
+                        <div class="navbar__menu-user transition-primary ">
+                            <i class="navbar__icon fa-solid fa-user-group"></i>
+                            <!-- user -->
+                            <ul class="menu-user__list">
+                                <li class="menu-user__item">
+                                    <a class="menu-user__item-link transition-primary" onclick="checkout()">Checkout</a>
+                                </li>
+
+                                <li class="menu-user__item">
+                                    <a class="menu-user__item-link transition-primary" onclick="profile()">My Account</a>
+                                </li>
+
+                                <li class="menu-user__item">
+                                    <a class="menu-user__item-link transition-primary">Shopping Cart</a>
+                                </li>
+
+                                <li class="menu-user__item">
+                                    <a class="menu-user__item-link transition-primary">Wishlist</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <i class="navbar__icon transition-primary fa-solid fa-heart" onclick="checkFavorite()"></i>
+                        <!-- Cart -->
+                        <div class="navbar__bag-wrap transition-primary" onclick="checkCart()">
+                            <i class="navbar__icon fa-solid fa-bag-shopping"></i>
+                            <span class="navbar__bag-quantity" id="Quantity_Cart">0</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="header__slider">
+                <div class="wrap-slider">
+                    <div class="slider__left">
+                        <i class="btn--slide slide-left transition-primary fa-solid fa-chevron-left"></i>
+
+                        <div class="slider__content">
+                            <header class="slider__head">AMAZING FROM Lukani</header>
+                            <span class="slider__mid">
+                                <p>CACTUS</p>
+                                DECORATION
+                            </span>
+                            <p class="slider__discount">Discount 20% Off For Lukani Members</p>
+
+                            <button class="slider__btn">DISCOVER NOW</button>
+                        </div>
+                    </div>
+
+                    <i class="btn--slide slide-right transition-primary fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <h3 class="store__header">Ecommerce fashion</h3>
+        </div>
+        <div class="footer__border f-1"></div>
+        <div class="footer">
+            <div class="container__products">
+                <!-- list data -->
+                <h2 class="store__header">Top Seller</h2>
+
+
+                <div id="tbl_data"></div>
+
+
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">&lt;</a>
+                    <a class="active" href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">&gt;</a>
+                    <a href="#">&raquo;</a>
+                </div>
+                <!-- End -->
+            </div>
+            <div class="footer__information-border grid wide">
+                <div class="footer__information row">
+                    <div class="footer__inform-wrap col l-2 m-4 c-12">
+                        <h3 class="footer__inform-head">OPENING TIME</h3>
+                        <div class="footer__inform-content-wrap">
+                            <p class="footer__inform-content">Mon - Fri: 8AM - 10PM</p>
+                            <p class="footer__inform-content">Sat: 9AM-8PM</p>
+                            <p class="footer__inform-content">Suns: 14hPM-18hPM</p>
+                        </div>
+                        <p class="footer__inform-status">We Work All The Holidays</p>
+                    </div>
+
+                    <div class="footer__inform-wrap col l-2 m-4 c-12">
+                        <h3 class="footer__inform-head">INFORMATION</h3>
+                        <div class="footer__inform-content-wrap">
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">About Us</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Checkout</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Contact</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Frequently Questions</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Wishlist</p>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="footer__inform-link col l-4 m-4 c-12">
+                        <img src="~/Assets/img/Logo/logo.jpg" alt="" class="footer__inform-link-logo">
+
+                        <div class="footer__inform-contact">
+                            <a href="" class="footer__inform-contact-link transition-primary">Payment</a>
+                            <a href="" class="footer__inform-contact-link transition-primary">Affiliates</a>
+                            <a href="" class="footer__inform-contact-link transition-primary">Contact</a>
+                            <a href="" class="footer__inform-contact-link transition-primary">Internet</a>
+                        </div>
+
+                        <div class="footer__inform-icon">
+                            <a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-google-plus-g"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer__inform-wrap col l-2 m-4 c-12">
+                        <h3 class="footer__inform-head">MY ACCOUNT</h3>
+                        <div class="footer__inform-content-wrap">
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">My Account</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Contact</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Shopping Cart</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Checkout</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Shop</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Order History</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer__inform-wrap col l-2 m-4 c-12">
+                        <h3 class="footer__inform-head">CUSTOMER SERVICE</h3>
+                        <div class="footer__inform-content-wrap">
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Contact Us</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Terms of use</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Privacy Policy</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Site Map</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">My Account</p>
+                            </a>
+
+                            <a href="">
+                                <p class="footer__inform-content transition-primary">Returns</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__border f-2"></div>
+            <div class="footer__payment">
+                <p> Ecommerce fashion</p>
+                <img src="~/Assets/img/Footer/payment.webp" alt="" class="footer__payment-card">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkout() {
+        }
+        function profile() {
+        }
+        function checkCart() {
+            $.ajax({
+                url: "/Product/PageProduct",
+                data: { page: 1 },
+                type: "GET",
+                success: function (data) {
+                    console.log("data", data)
+                },
+                Error: function (req, status, error) {
+                    console.log("status", status)
+                }
+            })
+        }
+        function checkFavorite() {
+            $.ajax({
+                url: "/Product/LoadProduct",
+                type: "GET",
+                success: function (data) {
+                    console.log("data", data)
+                },
+                Error: function (req, status, error) {
+                    console.log("status", status)
+                }
+            })
+        }
+        getPage(1)
+        function getPage(_page) {
+            try {
+                $.ajax({
+                    url: "/Product/PageProduct",
+                    type: "GET",
+                    data: { page: _page },
+                    success: function (data) {
+                        console.log("data",data)
+                        $("#tbl_data").html(data)
+                    }
+                })
+            } catch (e) {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+
+
+
+
